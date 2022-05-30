@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SafeAreaView, View, StyleSheet, TextInput, Text, Animated, Modal, TouchableOpacity } from 'react-native';
 import COLORS from '../../consts/colors';
-import axios from 'axios';
+// import axios from 'axios';
 
 const ModalPopup = ({ visible, children }) => {
 
@@ -41,14 +41,14 @@ const ModalPopup = ({ visible, children }) => {
 
 const GymScreen = () => {
 
-    useEffect(() => {
-        getBookings()
-    }, [])
+    // useEffect(() => {
+    //     getBookings()
+    // }, [])
 
     const [visible, setVisible] = useState(false);
     const [memberId, setMemberId] = useState("");
     const [session, setSession] = useState("");
-    const [count, setCount] = useState([]);
+    // const [count, setCount] = useState([]);
 
     // const sendBooking = () => {
     //     axios.post("URL", {
@@ -60,17 +60,17 @@ const GymScreen = () => {
     //         })
     // }
 
-    const getBookings = () => {
+    // const getBookings = () => {
 
-        // axios.get("url")
-        //     .then(res => {
-        //         console.log(res);
-        //         setCount(res.data);
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     })
-    }
+    //     axios.get("url")
+    //         .then(res => {
+    //             console.log(res);
+    //             setCount(res.data);
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
+    // }
 
     function findOcc(arr, key) {
         let arr2 = [];
@@ -97,40 +97,40 @@ const GymScreen = () => {
     }
 
 
-    // let arr = [
-    //     {
-    //         "session": "09:00 - 11:00"
-    //     },
-    //     {
-    //         "session": "09:00 - 11:00"
-    //     },
-    //     {
-    //         "session": "11:00 - 13:00"
-    //     },
-    //     {
-    //         "session": "13:00 - 15:00"
-    //     },
-    //     {
-    //         "session": "15:00 - 17:00"
-    //     },
-    //     {
-    //         "session": "17:00 - 19:00"
-    //     },
-    //     {
-    //         "session": "19:00 - 21:00"
-    //     },
-    //     {
-    //         "session": "21:00 - 23:00"
-    //     },
-    //     {
-    //         "session": "21:00 - 23:00"
-    //     },
-    //     {
-    //         "session": "21:00 - 23:00"
-    //     },
-    // ]
+    let arr = [
+        {
+            "session": "09:00 - 11:00"
+        },
+        {
+            "session": "09:00 - 11:00"
+        },
+        {
+            "session": "11:00 - 13:00"
+        },
+        {
+            "session": "13:00 - 15:00"
+        },
+        {
+            "session": "15:00 - 17:00"
+        },
+        {
+            "session": "17:00 - 19:00"
+        },
+        {
+            "session": "19:00 - 21:00"
+        },
+        {
+            "session": "21:00 - 23:00"
+        },
+        {
+            "session": "21:00 - 23:00"
+        },
+        {
+            "session": "21:00 - 23:00"
+        },
+    ]
 
-    let arr = setCount
+    // let arr = count
 
     let key = "session"
     // console.log(findOcc(arr, key))
@@ -205,7 +205,7 @@ const GymScreen = () => {
                         backgroundColor: COLORS.primary,
                         ...style.optionBtn
                     }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>09:00-11:00{btn1}</Text>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>09:00-11:00 ({btn1})</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -214,7 +214,7 @@ const GymScreen = () => {
                         backgroundColor: COLORS.primary,
                         ...style.optionBtn
                     }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>{session}11:00-13:00{btn2}</Text>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>{session}11:00-13:00 ({btn2})</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -229,7 +229,7 @@ const GymScreen = () => {
                         backgroundColor: COLORS.primary,
                         ...style.optionBtn
                     }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>13:00-15:00{btn3}</Text>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>13:00-15:00 ({btn3})</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.8} onPress={() => setVisible(true)}>
@@ -237,26 +237,7 @@ const GymScreen = () => {
                         backgroundColor: COLORS.primary,
                         ...style.optionBtn
                     }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>17:00-19:00{btn4}</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-
-            <View style={style.optionsListContainer}>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => setVisible(true)}>
-                    <View style={{
-                        backgroundColor: COLORS.primary,
-                        ...style.optionBtn
-                    }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>15:00-17:00{btn5}</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => setVisible(true)}>
-                    <View style={{
-                        backgroundColor: COLORS.primary,
-                        ...style.optionBtn
-                    }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>19:00-21:00{btn6}</Text>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>17:00-19:00 ({btn4})</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -267,7 +248,26 @@ const GymScreen = () => {
                         backgroundColor: COLORS.primary,
                         ...style.optionBtn
                     }}>
-                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>21:00-23:00{btn7}</Text>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>15:00-17:00 ({btn5})</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => setVisible(true)}>
+                    <View style={{
+                        backgroundColor: COLORS.primary,
+                        ...style.optionBtn
+                    }}>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>19:00-21:00 ({btn6})</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+
+            <View style={style.optionsListContainer}>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => setVisible(true)}>
+                    <View style={{
+                        backgroundColor: COLORS.primary,
+                        ...style.optionBtn
+                    }}>
+                        <Text style={{ fontSize: 18, fontWeight: 'bold', marginLeft: 10, color: COLORS.white }}>21:00-23:00 ({btn7})</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -294,8 +294,8 @@ const style = StyleSheet.create({
     },
     optionBtn: {
         height: 65,
-        width: 150,
-        marginLeft: 20,
+        width: 170,
+        marginLeft: 15,
         borderRadius: 30,
         alignItems: 'center',
         paddingHorizontal: 5,

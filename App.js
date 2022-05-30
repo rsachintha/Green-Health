@@ -25,6 +25,7 @@ import SignUpScreen from './views/screens/SignUpScreen';
 import AddEvents from './views/screens/AddEvents';
 import ViewEvents from './views/screens/ViewEvents';
 import News from './views/screens/News';
+import ScanScreen from './views/screens/ScanScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -54,6 +55,7 @@ export default function App() {
           <Stack.Screen name='EditProfile' component={EditProfileScreen} />
           <Stack.Screen name='GymScreen' component={GymScreen} />
           <Stack.Screen name='PoolScreen' component={PoolScreen} />
+          <Stack.Screen name='ScanScreen' component={ScanScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </StoreProvider>

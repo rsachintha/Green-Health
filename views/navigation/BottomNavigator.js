@@ -8,6 +8,7 @@ import HomeScreen from '../screens/HomeScreen';
 import PlansScreen from '../screens/PlansScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ViewEvent from '../screens/ViewEvents';
+import ScanScreen from '../screens/ScanScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +43,7 @@ const BottomNavigator = () => {
                 }}
             /><Tab.Screen
                 name='Scan'
-                component={HomeScreen}
+                component={ScanScreen}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <View style={{
